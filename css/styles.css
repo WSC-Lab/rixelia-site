@@ -1,0 +1,857 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#2E2923;
+  --brown:#8B6A45;
+  --brown-dark:#6F5234;
+  --beige:#F8F3EA;
+  --beige-2:#F3EBDD;
+  --beige-3:#EFE6D8;
+  --line:#D5C6B2;
+  --muted:#71675C;
+  --white:#fffaf3;
+  --serif:'Shippori Mincho',serif;
+  --sans:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--beige);line-height:1.75;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,243,234,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(213,198,178,.58)}
+.header-inner{height:92px;padding:0 64px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.logo{display:block;line-height:1.05;flex:0 0 auto}
+.logo-main{display:block;font-family:var(--serif);font-size:2rem;letter-spacing:.16em}
+.logo-sub{display:block;margin-top:8px;font-size:.76rem;letter-spacing:.18em;color:#5f5246}
+.desktop-nav{display:flex;align-items:center;gap:32px;font-family:var(--serif);font-size:1rem}
+.desktop-nav a{transition:color .18s}
+.desktop-nav a:hover{color:var(--brown)}
+.header-cta{height:54px;min-width:158px;padding:0 22px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);background:var(--brown);color:#fff}
+.header-cta::after{content:'›';font-size:1.4rem;margin-left:12px}
+.menu-button{display:none;width:42px;height:42px;background:transparent;border:0}
+.menu-button span{display:block;width:24px;height:1px;background:var(--ink);margin:6px auto;transition:.2s}
+.mobile-nav{display:none}
+
+.hero{padding-top:92px;display:grid;grid-template-columns:45% 55%;min-height:812px;background:var(--beige)}
+.hero-copy{padding:108px 64px 92px;background:radial-gradient(circle at 0% 0%,rgba(255,255,255,.72),transparent 34%),linear-gradient(180deg,#F8F3EA 0%,#F3EBDD 100%);display:flex;flex-direction:column;justify-content:center}
+.hero-label,.section-label{font-size:.82rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brown);font-weight:500}
+.hero h1{font-family:var(--serif);font-size:clamp(3rem,5.4vw,5.35rem);letter-spacing:.09em;line-height:1.32;font-weight:500;margin:24px 0 30px}
+.hero-rule{width:72px;height:1px;background:var(--brown);margin-bottom:38px}
+.hero-text{max-width:520px;font-family:var(--serif);font-size:1.04rem;line-height:2.08;letter-spacing:.055em;color:#3F362D;margin-bottom:40px}
+.hero-buttons{display:flex;gap:20px;flex-wrap:wrap}
+.btn{height:54px;padding:0 28px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--serif);border:1px solid transparent;transition:.2s}
+.btn::after{content:'›';font-size:1.35rem;margin-left:8px}
+.btn-primary{background:var(--brown);color:#fff}
+.btn-primary:hover{background:var(--brown-dark);transform:translateY(-1px)}
+.btn-outline{border-color:var(--brown);color:var(--brown);background:rgba(255,255,255,.35)}
+.btn-outline:hover{background:var(--brown);color:#fff}
+.hero-note{margin-top:22px;font-size:.86rem;color:var(--muted)}
+.hero-visual{min-height:720px;background:#E9DDCC;overflow:hidden}
+.hero-visual img{width:100%;height:100%;min-height:720px;object-fit:cover;object-position:center}
+
+.section{padding:112px 0}
+.section h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.55rem);font-weight:500;letter-spacing:.08em;line-height:1.55;margin-top:14px;text-align:left}
+.section-lead{max-width:690px;color:var(--muted);margin-top:20px;line-height:2}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.problem,.faq{background:var(--beige-2)}
+.problem-grid,.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.simple-card,.service-card,.sample-card{background:var(--white);border:1px solid var(--line);padding:28px;box-shadow:0 1px 0 rgba(46,41,35,.04)}
+.card-icon{display:block;font-size:1.8rem;color:var(--brown);margin-bottom:16px}
+.simple-card h3,.service-card h3,.sample-card h3{font-family:var(--serif);font-weight:500;font-size:1.05rem;margin-bottom:10px}
+.simple-card p,.service-card p,.sample-card p{color:var(--muted);font-size:.92rem}
+.service-card span{display:block;color:var(--brown);letter-spacing:.12em;font-size:.78rem;margin-bottom:14px}
+
+.strength{background:#F8F3EA}
+.strength .section-label,.flow .section-label,.samples .section-label,.faq .section-label{text-align:center;display:block}
+.strength h2,.flow h2,.samples h2,.faq h2{text-align:center}
+.strength-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px}
+.strength-grid article{padding:0 28px;border-left:1px solid var(--line)}
+.strength-grid article:last-child{border-right:1px solid var(--line)}
+.strength-icon{font-size:2.6rem;color:var(--brown);line-height:1;margin-bottom:22px;text-align:center}
+.strength h3{font-family:var(--serif);font-size:1.05rem;font-weight:500;margin-bottom:18px;text-align:center}
+.strength p{color:var(--muted);font-size:.92rem}
+
+.flow{background:var(--beige-3)}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:64px}
+.flow-grid article{text-align:center}
+.flow-grid span{width:48px;height:48px;border-radius:50%;background:#C8B696;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);margin-bottom:20px}
+.flow h3{font-family:var(--serif);font-size:1rem;font-weight:500;margin-bottom:10px}
+.flow p{color:var(--muted);font-size:.88rem}
+
+.samples{background:#fffaf3}
+.sample-note{margin-top:18px;padding:12px 16px;border-left:3px solid var(--line);background:var(--beige);color:var(--muted);display:inline-block}
+.sample-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:38px}
+.sample-visual{height:190px;margin:-28px -28px 24px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.9);font-family:var(--serif);letter-spacing:.18em;background:linear-gradient(140deg,#2E2923,#8B6A45)}
+.sample-visual.cafe{background:linear-gradient(140deg,#4A3528,#A77C4B)}
+.sample-visual.seitai{background:linear-gradient(140deg,#323229,#8B6A45)}
+.sample-visual.school{background:linear-gradient(140deg,#2E2923,#A38458)}
+.sample-card ul{margin-top:14px;padding-left:1.2em;color:var(--muted);font-size:.86rem}
+
+.faq-list{max-width:760px;margin:44px auto 0}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{font-family:var(--serif);font-size:1.05rem;cursor:pointer}
+details p{color:var(--muted);margin-top:14px}
+
+.contact{padding:112px 0;background:linear-gradient(180deg,#2E2923,#211B17);color:#fff}
+.contact-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.contact h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:500;letter-spacing:.06em;margin:14px 0 18px}
+.contact-copy p{color:rgba(255,255,255,.72);line-height:2}
+.form-note{margin-top:20px;font-size:.9rem;color:rgba(255,255,255,.48)!important}
+.contact-form{background:#fffaf3;color:var(--ink);border:1px solid rgba(213,198,178,.5);padding:32px;display:grid;gap:18px}
+.contact-form label,.contact-form legend{font-family:var(--serif);font-size:.95rem;color:#3F362D}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;margin-top:8px;padding:13px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:3px}
+.contact-form textarea{resize:vertical}
+fieldset{border:1px solid var(--line);padding:18px;display:grid;gap:10px}
+.check{display:flex!important;gap:10px;align-items:center;font-family:var(--sans)!important;font-size:.9rem!important}
+.check input{width:auto;margin:0}
+.form-submit{width:100%;border:0;cursor:pointer}
+.form-caption{font-size:.8rem;color:var(--muted);line-height:1.7}
+
+.site-footer{background:#1F1A16;color:rgba(255,255,255,.58);text-align:center;padding:38px 24px}
+.footer-logo{font-family:var(--serif);letter-spacing:.12em;color:#fff;font-size:1.2rem}
+.site-footer a,.site-footer small{display:block;margin-top:8px}
+
+.fixed-mobile-cta{display:none}
+
+@media(max-width:1050px){
+  .header-inner{padding:0 28px}
+  .desktop-nav{gap:18px}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:86px 32px 64px}
+  .hero-visual{min-height:auto}
+  .hero-visual img{height:auto;min-height:0;object-fit:contain}
+  .strength-grid{grid-template-columns:repeat(2,1fr);gap:34px}
+  .strength-grid article{border-right:0!important}
+  .contact-layout{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  body{padding-bottom:72px}
+  .header-inner{height:72px;padding:0 18px}
+  .logo-main{font-size:1.45rem}
+  .logo-sub{font-size:.62rem}
+  .desktop-nav,.header-cta{display:none}
+  .menu-button{display:block}
+  .menu-button.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-button.open span:nth-child(2){opacity:0}
+  .menu-button.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:var(--beige);border-bottom:1px solid var(--line);padding:18px 22px 24px}
+  .mobile-nav.open{display:block}
+  .mobile-nav a{display:block;padding:12px 0;font-family:var(--serif)}
+  .mobile-form-link{margin-top:14px;width:100%}
+  .hero{padding-top:72px}
+  .hero-copy{padding:58px 22px 46px}
+  .hero h1{font-size:2.65rem}
+  .hero-text{font-size:.95rem}
+  .hero-buttons .btn{width:100%}
+  .section{padding:76px 0}
+  .problem-grid,.service-grid,.sample-grid,.flow-grid{grid-template-columns:1fr}
+  .strength-grid{grid-template-columns:1fr}
+  .strength-grid article{border-left:0;border-top:1px solid var(--line);padding:28px 0}
+  .contact-form{padding:24px 18px}
+  .fixed-mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:200;display:block;background:var(--brown);box-shadow:0 -8px 24px rgba(46,41,35,.12)}
+  .fixed-mobile-cta a{height:58px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);color:#fff}
+}
+
+/* Subscription model emphasis */
+.hero-note{
+  display:inline-block;
+  padding:10px 14px;
+  border-left:3px solid var(--brown);
+  background:rgba(255,250,243,.72);
+  color:#4A3C2C;
+}
+.form-note{
+  color:rgba(255,255,255,.62)!important;
+}
+
+/* Subscription-only form */
+.form-subscription-confirm{
+  padding:16px 18px;
+  border:1px solid var(--line);
+  background:#F8F3EA;
+}
+.required{
+  display:inline-block;
+  margin-left:8px;
+  padding:2px 7px;
+  background:var(--brown);
+  color:#fff;
+  font-size:.72rem;
+  font-family:var(--sans);
+  letter-spacing:.04em;
+}
+.fieldset-note{
+  color:var(--muted);
+  font-size:.82rem;
+  margin-bottom:4px;
+}
+
+/* Hero title exact two-line control */
+.hero h1{
+  font-size:clamp(2.65rem,4.65vw,4.55rem);
+  line-height:1.34;
+  white-space:nowrap;
+}
+.hero-title-line{
+  display:block;
+}
+@media(max-width:768px){
+  .hero h1{
+    font-size:clamp(2.15rem,10.2vw,3.05rem);
+    line-height:1.36;
+    white-space:normal;
+  }
+  .hero-title-line{
+    white-space:nowrap;
+  }
+}
+
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+
+.field-help{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.6;
+}
+
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin-top:6px;
+  margin-bottom:8px;
+}
+.required-badge{
+  color:#A24735;
+  font-size:.8rem;
+  margin-left:.5rem;
+}
+
+/* Final form semantics */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin-top:-4px;
+  margin-bottom:2px;
+}
+.required-badge{
+  display:inline-block;
+  color:#A24735;
+  font-size:.78rem;
+  margin-left:.5rem;
+  font-family:var(--sans);
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* Review-applied final form */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin-top:-4px;
+  margin-bottom:2px;
+}
+.required-badge{
+  display:inline-block;
+  color:#A24735;
+  font-size:.78rem;
+  margin-left:.5rem;
+  font-family:var(--sans);
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* True final form fixes */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin-top:-4px;
+  margin-bottom:2px;
+}
+.required-badge{
+  display:inline-block;
+  color:#A24735;
+  font-size:.78rem;
+  margin-left:.5rem;
+  font-family:var(--sans);
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.form-submit:disabled{
+  opacity:.72;
+  cursor:not-allowed;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* Final hardening pass */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-group{
+  display:grid;
+  gap:8px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin:0;
+}
+.fieldset-note{
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.65;
+  margin-bottom:8px;
+  padding:0;
+}
+.required-badge{
+  display:inline-block;
+  color:#A24735;
+  font-size:.78rem;
+  margin-left:.5rem;
+  font-family:var(--sans);
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.form-submit.is-submitting{
+  opacity:.72;
+  cursor:not-allowed;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* Release hardening pass */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-group{
+  display:grid;
+  gap:8px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin:0;
+}
+.fieldset-note{
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.65;
+  margin-bottom:8px;
+  padding:0;
+}
+.required-badge{
+  display:inline-block;
+  background:#B52B39;
+  color:#fff;
+  font-size:.75rem;
+  line-height:1;
+  padding:.18rem .42rem;
+  margin-left:.5rem;
+  border-radius:3px;
+  font-family:var(--sans);
+  font-weight:700;
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.form-submit.is-submitting{
+  opacity:.72;
+  cursor:not-allowed;
+}
+summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  width:100%;
+  padding:1rem 0;
+  cursor:pointer;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* Absolute final release pass */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-group{
+  display:grid;
+  gap:8px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin:0;
+}
+.fieldset-note{
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.65;
+  margin-bottom:8px;
+  padding:0;
+}
+.required-badge{
+  display:inline-block;
+  background:#B52B39;
+  color:#fff;
+  font-size:.75rem;
+  line-height:1;
+  padding:.18rem .42rem;
+  margin-left:.5rem;
+  border-radius:3px;
+  font-family:var(--sans);
+  font-weight:700;
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.privacy-check{
+  display:flex;
+  align-items:flex-start;
+  width:100%;
+  cursor:pointer;
+}
+.privacy-check input{
+  margin-top:.25rem;
+  margin-right:.5rem;
+  flex-shrink:0;
+}
+.form-submit.is-submitting{
+  opacity:.72;
+  cursor:not-allowed;
+}
+summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  width:100%;
+  padding:1rem 0;
+  cursor:pointer;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* Final production hardening */
+.form-grid{
+  display:grid;
+  gap:14px;
+}
+.form-group{
+  display:grid;
+  gap:8px;
+  scroll-margin-top:100px;
+}
+.form-fieldset{
+  border:1px solid var(--line);
+  padding:18px;
+}
+.field-note{
+  color:var(--muted);
+  font-size:.8rem;
+  line-height:1.65;
+  margin:0;
+}
+.fieldset-note{
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.65;
+  margin-bottom:8px;
+  padding:0;
+}
+.required-badge{
+  display:inline-block;
+  background:#B52B39;
+  color:#fff;
+  font-size:.75rem;
+  line-height:1;
+  padding:.18rem .42rem;
+  margin-left:.5rem;
+  border-radius:3px;
+  font-family:var(--sans);
+  font-weight:700;
+}
+.needs-fieldset.has-error{
+  border-color:#A24735;
+  background:#FFF4EF;
+}
+.needs-fieldset.has-error::after{
+  content:'相談したいことを1つ以上選択してください。';
+  display:block;
+  color:#A24735;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.privacy-check{
+  display:flex;
+  align-items:flex-start;
+  width:100%;
+  cursor:pointer;
+}
+.privacy-check input{
+  margin-top:.25rem;
+  margin-right:.5rem;
+  flex-shrink:0;
+}
+.honeypot{
+  position:absolute!important;
+  left:-9999px!important;
+  width:1px!important;
+  height:1px!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+.form-submit.is-submitting{
+  opacity:.72;
+  cursor:not-allowed;
+}
+summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  width:100%;
+  padding:1rem 0;
+  cursor:pointer;
+}
+.policy-section{
+  padding:54px 0;
+  background:#F8F3EA;
+  border-top:1px solid var(--line);
+}
+.policy-section h2{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.policy-section p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.9;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.8rem;
+}
+.footer-links a{
+  margin-top:0;
+}
+
+/* Sample preview upgrade */
+.sample-preview-grid{
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.sample-preview-card{
+  padding:0;
+  overflow:hidden;
+  background:#fffaf3;
+  display:flex;
+  flex-direction:column;
+}
+.sample-preview{
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#EFE6D8;
+  border-bottom:1px solid var(--line);
+}
+.sample-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.sample-preview-card:hover .sample-preview img{
+  transform:scale(1.035);
+}
+.sample-card-body{
+  padding:24px;
+}
+.sample-category{
+  color:var(--brown);
+  font-size:.74rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.sample-preview-card .sample-card-body h3{
+  margin-bottom:10px;
+}
+.sample-preview-card .sample-card-body p{
+  color:var(--muted);
+}
+.sample-preview-card .sample-card-body ul{
+  margin-top:14px;
+  padding-left:1.2em;
+  color:var(--muted);
+  font-size:.86rem;
+}
+@media(max-width:1050px){
+  .sample-preview-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .sample-preview-grid{grid-template-columns:1fr;}
+}
